@@ -1,5 +1,17 @@
 import React, {useState} from 'react';
-import {EditorWrapper, StyledTextArea, StyledEditor} from './styledEditorComponents';
+import {
+  EditorWrapper,
+  StyledTextArea,
+  StyledEditor,
+  StyledToolBar,
+  Icon
+} from './styledEditorComponents';
+import {
+  Heading, Italic, Bold, Underline,
+  Strikethrough, ListOl, ListUl,
+  DotsHorizontalRounded, Link, Image,
+  Code
+} from '@styled-icons/boxicons-regular';
 
 import {Preview} from './Preview';
 import marked from 'marked'
@@ -49,7 +61,7 @@ And here. | Okay. | I think we get it.
 - Even if you use dashes or asterisks.
 * And last but not least, let's not forget embedded images:
 
-![React Logo w/ Text](https://goo.gl/Umyytc)
+
 `;
 
 export const Editor = () => {
@@ -62,7 +74,20 @@ export const Editor = () => {
   return (
     <EditorWrapper>
       <StyledEditor>
-        <StyledTextArea onInput={handleInput} type='text' value={inputContent} />
+        <StyledToolBar>
+          <Icon as={Heading}/>
+          <Icon as={Bold}/>
+          <Icon as={Italic}/>
+          <Icon as={Underline}/>
+          <Icon as={Strikethrough}/>
+          <Icon as={DotsHorizontalRounded}/>
+          <Icon as={ListOl}/>
+          <Icon as={ListUl}/>
+          <Icon as={Link} />
+          <Icon as={Image} />
+          <Icon as={Code} />
+        </StyledToolBar>
+        <StyledTextArea onInput={handleInput} type='text' value={inputContent}/>
       </StyledEditor>
       <Preview renderedContent={marked(inputContent)}/>
     </EditorWrapper>
