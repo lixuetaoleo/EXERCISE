@@ -5,6 +5,15 @@ export const EditorWrapper = styled.div`
 `;
 
 export const StyledTextArea = styled.textarea`
-  max-width: 40%;
   display: block;
+  width: 80%;
+  resize: vertical;
+  margin: 0 auto;
+  min-height: 100%;
+`;
+
+export const StyledEditor = styled.div`
+
+  width: 40%;
+  margin-top: 2%;
 `;

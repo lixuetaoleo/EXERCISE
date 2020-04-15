@@ -5,6 +5,6 @@ export const StyledPreviewWrapper = styled.div`
 `;
 
 export const StyledPreview = styled.div`
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
 `;

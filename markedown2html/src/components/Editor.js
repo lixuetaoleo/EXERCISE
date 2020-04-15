@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {EditorWrapper, StyledTextArea} from './styledEditorComponents';
+import {EditorWrapper, StyledTextArea, StyledEditor} from './styledEditorComponents';
 
 import {Preview} from './Preview';
 import marked from 'marked'
@@ -20,6 +20,7 @@ function anotherExample(firstLine, lastLine) {
   }
 }
 \`\`\`
+
   
 You can also make text **bold**... whoa!
 Or _italic_.
@@ -60,7 +61,9 @@ export const Editor = () => {
 
   return (
     <EditorWrapper>
-      <StyledTextArea onInput={handleInput} type='text' value={inputContent} />
+      <StyledEditor>
+        <StyledTextArea onInput={handleInput} type='text' value={inputContent} />
+      </StyledEditor>
       <Preview renderedContent={marked(inputContent)}/>
     </EditorWrapper>
   );
