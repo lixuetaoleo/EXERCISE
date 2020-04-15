@@ -1,14 +1,8 @@
 import React from 'react';
+import {StyledPreview} from "./styledPreviewComponents";
 
-const previewStyle = {
-  overflow: 'auto',
-  maxWidth:'50%',
-  boxSizing:'border-box',
-  marginLeft:10
-};
-
-export const Preview = function (props) {
+export const Preview = (props) => {
   return (
-    <div id='preview' style={previewStyle} dangerouslySetInnerHTML={{__html: props.renderedContent}}></div>
+    <StyledPreview dangerouslySetInnerHTML={{__html: props.renderedContent}} />
   );
 }
