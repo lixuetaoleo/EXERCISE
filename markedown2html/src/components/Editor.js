@@ -50,7 +50,6 @@ And here. | Okay. | I think we get it.
 
 ![React Logo w/ Text](https://goo.gl/Umyytc)
 `;
-const defaultRendered = marked(defaultInput);
 
 export const Editor = () => {
   const [inputContent, setInputContent] = useState(defaultInput);
@@ -60,9 +59,9 @@ export const Editor = () => {
   }
 
   return (
-    <div>
+    <EditorWrapper>
       <StyledTextArea onInput={handleInput} type='text' value={inputContent} />
       <Preview renderedContent={marked(inputContent)}/>
-    </div>
+    </EditorWrapper>
   );
 };

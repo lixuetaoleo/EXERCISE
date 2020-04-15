@@ -1,8 +1,10 @@
 import React from 'react';
-import {StyledPreview} from "./styledPreviewComponents";
+import {StyledPreview, StyledPreviewWrapper} from "./styledPreviewComponents";
 
 export const Preview = (props) => {
   return (
-    <StyledPreview dangerouslySetInnerHTML={{__html: props.renderedContent}} />
+    <StyledPreviewWrapper>
+      <StyledPreview dangerouslySetInnerHTML={{__html: props.renderedContent}} />
+    </ StyledPreviewWrapper>
   );
 }
